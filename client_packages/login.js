@@ -1,4 +1,4 @@
-var loginBrowser = mp.browsers.new("package://login/index.html");
+var loginBrowser = mp.browsers.new("package://CEF/login.html");
 mp.gui.cursor.show(true, true);
 
 mp.events.add("loginDataToServer", (user, pass, state) => {

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/bank.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="card" id="mainContainer">
+            <div class="card-body">
+
+
+                <img style="display: block; margin-left:auto; margin-right:auto;" src="assets/misc/maze.png" height="150" width="600" />
+
+
+                <div id="cBalance" class="row">
+                    <div class="col-8"></div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div id="balance"><b>Account balance $</b> </div>
+                            <div id="balance-placeholder">0.000.000.000</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="log-tab" data-toggle="tab" href="#log" role="tab">Transaction Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab">Deposit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="withdraw-tab" data-toggle="tab" href="#withdraw" role="tab">Withdraw</a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="log" role="tabpanel">
+
+                        <div class="mt-3" style="text-align:center">
+                            <p>Here are your last 16 transactions</p>
+                        </div>
+                        <div class="scrollbar scrollbar-danger " id="transContainer">
+                            <div class="auto-overflow">
+                                <div class=" ml-1 mr-1">
+                                    <div class="mt-1 mb-1 form-control border bg-danger">
+                                        <div class="row">
+                                            <div class="text-white col-8" style="text-align:left">received from this player ....</div>
+                                            <div class="text-white col-4" style="text-align:right">-$500.54</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="deposit" role="tabpanel">
+                        <div class="row ml-10 mt-3 mr-10" style="display: block; margin-left:auto; margin-right:auto;">
+
+                            <div class="mt-3 mb-3 form-control border bg-danger">
+                                <div class="text-white" id="name-placeholder-d"><b>name-placeholder</b></div>
+                                <div class="text-white" style="text-align:center">Select the amount you wish to deposit into this account.</div>
+                            </div>
+                            <hr />
+                            <div class="row mt-3 mb-3">
+                                <div class="col-3"></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">10</button></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">100</button></div>
+                                <div class="col-3"></div>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-3"></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">20</button></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">200</button></div>
+                                <div class="col-3"></div>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-3"></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">50</button></div>
+                                <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">500</button></div>
+                                <div class="col-3"></div>
+                            </div>
+                            <hr />
+                            <div class="mt-3 mb-3 form-control border bg-danger">
+                                <div class="text-white" style="text-align:center">Or would you like to deposit another amount?</div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="deposit-amount" placeholder="Amount">
+                            </div>
+                            <button type="button" class="btn btn-success btn-lg btn-block" id="deposit" onclick="">Deposit</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="withdraw" role="tabpanel">
+                        <div class="mt-3 mb-3 form-control border bg-danger">
+                            <div class="text-white" id="name-placeholder-w"><b>name-placeholder</b></div>
+                            <div class="text-white" style="text-align:center">Select the amount you wish to withdraw from this account.</div>
+                        </div>
+                        <hr />
+                        <div class="row mt-3 mb-3">
+                            <div class="col-3"></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">10</button></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">100</button></div>
+                            <div class="col-3"></div>
+                        </div>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-3"></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">20</button></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">200</button></div>
+                            <div class="col-3"></div>
+                        </div>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-3"></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">50</button></div>
+                            <div class="col-3"><button type="button" class="btn btn-danger" style="width: 100%">500</button></div>
+                            <div class="col-3"></div>
+                        </div>
+                        <hr />
+                        <div class="mt-3 mb-3 form-control border bg-danger">
+                            <div class="text-white" style="text-align:center">Or would you like to withdraw another amount?</div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="withdraw-amount" placeholder="Amount">
+                        </div>
+                        <button type="button" class="btn btn-success btn-lg btn-block" id="withdraw" onclick="">Withdraw</button>
+                    </div>
+                </div>
+                <button type="button" class="mt-3 btn btn-danger btn-lg btn-block" onclick="triggerCloseBank()" id="cancelBank">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/bank.js"></script>
+
+
+</body>
+</html>
