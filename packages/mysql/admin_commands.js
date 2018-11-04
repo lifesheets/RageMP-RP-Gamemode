@@ -1,3 +1,5 @@
+var fractionnames = require('./functions.js').fractionnames;
+
 /*
  * Command for giving a Player Money, must be a Admin with admin_level >= 5 (Admin)
  * @param admin     (sender)
@@ -65,4 +67,26 @@ mp.events.addCommand('setpos', (player) => {
 
     player.position = new mp.Vector3(243.2230, 224.7587, 106.2868);
 
+});
+
+
+mp.events.addCommand('makeleader', (player, fractionid) => {
+    if (player.admin_level >= 5) {
+        if (!fractionid || isNaN(fractionid)) return player.outputChatBox('SYNTAX: /makeleader [fractionid]');
+        if (fractionid > 1 && fractionid <= 17) {
+            gm.mysql.handle.query('UPDATE `fraction` SET fraction_level = ?, fraction_rank = 13 WHERE username = ?', [fractionid, player.name], function (err, res) {
+                if (!err) {
+  
+                    player.fraction_level = fractionid;
+                    player.fraction_rank = 13;
+                    //TODO: Replace Leader with getFractionRank() <- to be written
+                    player.outputChatBox(`You was made the Leader of the Fraction <b style='color:red'>${fractionnames[fractionid]}</b> .`);
+                } else {
+                    console.log(err)
+                }
+            });
+        } else {
+            player.outputChatBox("Invalid Fraction ID!")
+        }
+    }
 });

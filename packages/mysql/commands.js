@@ -14,11 +14,17 @@ mp.events.addCommand('bankneu', (player) => {
 
 
         let bankmoney = player.bankmoney;
-        player.outputChatBox(`command: ${player.bankmoney}`);
-        player.call("showBankBrowser", [player, bankmoney]);
+        let money = player.money;
+        player.call("showBankBrowser", [player, bankmoney, money]);
     }
     else {
         player.outputChatBox(`nicht in if`);
         player.outputChatBox(player.dist(bankPos).toString());
     }
+});
+
+mp.events.addCommand('statstext', (player) => {
+
+    player.outputChatBox(`${player.name} | ${player.money} | ${player.bankmoney} | ${player.admin_level} | ${player.level} | ${player.fraction_level} | ${player.fraction_rank} | ${player.duty}`);
+
 });

@@ -76,8 +76,15 @@ mp.events.add("sendDataToServer", (player, username, pass, state) => {
                     } else {
                         bcrypt.hash(pass, null, null, function(err, hash) {
                             if(!err){
-                                gm.mysql.handle.query('INSERT INTO `accounts` SET username = ?, password = ?', [username, hash], function(err, res){
-                                    if(!err){
+                                gm.mysql.handle.query('INSERT INTO `accounts` SET username = ?, password = ?', [username, hash, username], function(err, res){
+                                    if (!err) {
+                                        gm.mysql.handle.query('INSERT INTO `fraction` SET username = ?', [username], function (err, res) {
+                                            if (!err) {
+                                                //
+                                            } else {
+                                                console.log("\x1b[31m[ERROR] " + err)
+                                            }
+                                        });
                                         player.name = username;
                                         player.call("loginHandler", ["registered"]);
                                         gm.auth.registerAccount(player);
@@ -86,6 +93,7 @@ mp.events.add("sendDataToServer", (player, username, pass, state) => {
                                         console.log("\x1b[31m[ERROR] " + err)
                                     }
                                 });
+                                
                             } else {
                                 console.log("\x1b[31m[BCrypt]: " + err)
                             }
