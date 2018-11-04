@@ -1,5 +1,5 @@
 # RageMP Roleplay Gamemode
-This is a Open Source Gamemode for Rage-MP, which i started from a basic login/register Template by MrPancakers (Credits below) and will be developing from time to time.
+This is an Open Source Gamemode for Rage-MP, which i started from a basic login/register Template by MrPancakers (Credits below) and will be developing from time to time.
 
 ## Functions
 - Login/Register System via MYSQL Authentification, password ist encrypted with BCrypt
