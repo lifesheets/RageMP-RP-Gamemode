@@ -1,4 +1,4 @@
-#not activly maintained, so PR's are welcome
+# not activly maintained, so PR's are welcome
 
 # RageMP Roleplay Gamemode
 This is an Open Source Gamemode for Rage-MP, which i started from a basic login/register Template by MrPancakers (Credits below) and will be developing from time to time.
